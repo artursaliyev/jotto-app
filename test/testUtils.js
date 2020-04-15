@@ -2,6 +2,13 @@
 
 import checkPropTypes from "check-prop-types";
 
+import rootReducer from "../src/reducers";
+import { createStore } from "redux";
+
+export const storeFactory = (initialState) => {
+  return createStore(rootReducer, initialState);
+}
+
 /**
  * Return ShallowWrapper containing node(s) with the given data-test value.
  * @param {ShallowWrapper} wrapper - Enzyme shallow wrapper to search within.
@@ -13,6 +20,11 @@ export const findByTestAttr = (wrapper, val) => {
 };
 
 export const checkProp = (component, conformingProps) => {
-  const propError = checkPropTypes(component.propTypes, conformingProps, "prop", component.name);
+  const propError = checkPropTypes(
+    component.propTypes,
+    conformingProps,
+    "prop",
+    component.name);
   expect(propError).toBeUndefined();
 }
+

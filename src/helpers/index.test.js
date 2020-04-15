@@ -16,6 +16,4 @@ describe("getLetterMatchCount", () => {
         const letterMatchCount = getLetterMatchCount("parka", secretWord);
         expect(letterMatchCount).toBe(3);
     });
-
-
 })

@@ -4,6 +4,7 @@ import "./App.css";
 
 import GuessedWords from "../cuessed-words"
 import Congrats from "../congrats"
+import Input from "../input/input"
 import { getSecretWord } from "../actions"
 
 export class UnconnectedApp extends Component {
@@ -15,7 +16,9 @@ export class UnconnectedApp extends Component {
   render() {
     return <div className="container">
       <h1>Jotto App  </h1>
+      {/* <div>The secret word is {this.props.secretWord}</div> */}
       <Congrats success={this.props.success} />
+      <Input />
       <GuessedWords guessedWords={this.props.guessedWords} />
     </div >;
   }

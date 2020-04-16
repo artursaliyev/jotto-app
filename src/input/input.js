@@ -14,6 +14,7 @@ export class UnconnectedInput extends Component {
         if (guessedWord && guessedWord.length > 0) {
             this.props.guessWord(guessedWord);
         }
+        this.inputBox.current.value = "";
     }
 
     render() {
@@ -25,7 +26,7 @@ export class UnconnectedInput extends Component {
                         id="word-guess" type="text" placeholder="enter guess"
                         ref={this.inputBox} />
                     <button data-test="submit-button"
-                        type="submit" className="btn btn-primary mb-2"
+                        className="btn btn-primary mb-2"
                         onClick={this.submitGuessedWord}>Submit</button>
                 </form>
             )
